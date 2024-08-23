@@ -1,0 +1,11 @@
+td {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+tr :nth-child(2) {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+tbody :not(:last-of-type) {
+    border-bottom: 1px solid black;
+}
