@@ -1,28 +1,30 @@
 <div class="flex flex-col items-center justify-center gap-y-4">
     <app-manager-dropdown></app-manager-dropdown>
 
-    <span>
-        <label for="emp-id">Employee ID:</label>
-        <input name="emp-id" id="emp-id">
-    </span>
+    <form [formGroup]="employeeForm" class="flex flex-col gap-4">
+        <label>
+            Employee ID:
+            <input type="text" formControlName="internalId" />
+        </label>
 
-    <span>
-        <label for="emp-first-name">First Name:</label>
-        <input name="emp-first-name" id="emp-first-name">
-    </span>
+        <label>
+            First Name:
+            <input type="text" formControlName="firstName" />
+        </label>
 
-    <span>
-        <label for="emp-last-name">Last Name:</label>
-        <input name="emp-last-name" id="emp-last-name">
-    </span>
+        <label>
+            Last Name:
+            <input type="text" formControlName="lastName" />
+        </label>
 
-    <span>
-        <label for="emp-roles">Roles:</label>
-        <textarea name="emp-roles" id="emp-roles" class="resize-none overflow-y-auto"></textarea>
-    </span>
+        <label>
+            Roles:
+            <textarea formControlName="roles" class="resize-none overflow-y-auto"></textarea>
+        </label>
 
-    <div class="flex gap-10">
-        <button type="button">Save</button>
-        <button type="button" routerLink="/home">Cancel</button>
-    </div>
+        <div class="flex justify-center gap-10">
+            <button type="button">Save</button>
+            <button type="button" routerLink="/home">Cancel</button>
+        </div>
+    </form>
 </div>
