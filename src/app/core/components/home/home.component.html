@@ -2,6 +2,7 @@
     <span>
         <label for="manager" class="font-semibold">Manager: </label>
         <select name="manager" id="manager" class="border border-black">
+            <option value="" disabled selected hidden>Select a Manager</option>
             <option [value]="manager" *ngFor="let manager of employees" class="px-2">
                 {{ manager.firstname + " " + manager.lastname }}
             </option>
@@ -33,7 +34,7 @@
 
     </table>
 
-    <button type="button" class="mt-2 border border-black rounded-lg py-1 px-2 bg-slate-300 font-semibold text-sm">
+    <button type="button" class="mt-2 border border-black rounded-lg py-1 px-2 bg-slate-300 font-semibold text-sm" routerLink="/add">
         Add Employee
     </button>
 </div>
