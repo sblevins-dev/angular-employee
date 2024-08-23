@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { NgFor } from '@angular/common';
+import Employee from '../../../core/models/Employee';
+import { EmployeeService } from '../../../core/services/employee-service.service';
 
 @Component({
   selector: 'app-manager-dropdown',
@@ -8,17 +10,11 @@ import { NgFor } from '@angular/common';
   templateUrl: './manager-dropdown.component.html',
   styleUrl: './manager-dropdown.component.css'
 })
-export class ManagerDropdownComponent {
-  employees = [
-    {
-      id: 1,
-      lastname: 'Smith',
-      firstname: 'Tim',
-    },
-    {
-      id: 2,
-      lastname: 'Wozoski',
-      firstname: 'Mike'
-    }
-  ]
+export class ManagerDropdownComponent implements OnInit {
+  employeeService: EmployeeService = inject(EmployeeService);
+  managers: Employee[] = [];
+  
+  ngOnInit(): void {
+    this.managers = this.employeeService.managers$;
+  }
 }

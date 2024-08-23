@@ -2,8 +2,8 @@
     <label for="manager" class="font-semibold">Manager: </label>
     <select name="manager" id="manager" class="border border-black">
         <option value="" disabled selected hidden>Select a Manager</option>
-        <option [value]="manager" *ngFor="let manager of employees" class="px-2">
-            {{ manager.firstname + " " + manager.lastname }}
+        <option [value]="manager" *ngFor="let manager of managers" class="px-2">
+            {{ manager.firstName + " " + manager.lastName }}
         </option>
     </select>
 </span>
