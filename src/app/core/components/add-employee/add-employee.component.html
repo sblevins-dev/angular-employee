@@ -1,1 +1,28 @@
-<p>add-employee works!</p>
+<div class="flex flex-col items-center justify-center gap-y-4">
+    <app-manager-dropdown></app-manager-dropdown>
+
+    <span>
+        <label for="emp-id">Employee ID:</label>
+        <input name="emp-id" id="emp-id">
+    </span>
+
+    <span>
+        <label for="emp-first-name">First Name:</label>
+        <input name="emp-first-name" id="emp-first-name">
+    </span>
+
+    <span>
+        <label for="emp-last-name">Last Name:</label>
+        <input name="emp-last-name" id="emp-last-name">
+    </span>
+
+    <span>
+        <label for="emp-roles">Roles:</label>
+        <textarea name="emp-roles" id="emp-roles" class="resize-none overflow-y-auto"></textarea>
+    </span>
+
+    <div class="flex gap-10">
+        <button type="button">Save</button>
+        <button type="button" routerLink="/home">Cancel</button>
+    </div>
+</div>

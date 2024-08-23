@@ -1,14 +1,5 @@
 <div class="flex flex-col items-center justify-center">
-    <span>
-        <label for="manager" class="font-semibold">Manager: </label>
-        <select name="manager" id="manager" class="border border-black">
-            <option value="" disabled selected hidden>Select a Manager</option>
-            <option [value]="manager" *ngFor="let manager of employees" class="px-2">
-                {{ manager.firstname + " " + manager.lastname }}
-            </option>
-        </select>
-    </span>
-
+    <app-manager-dropdown></app-manager-dropdown>
 
     <table class="my-6 w-[90%] border border-black">
         <thead>

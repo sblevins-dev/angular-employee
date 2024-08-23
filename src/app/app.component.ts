@@ -12,5 +12,16 @@ import { AddEmployeeComponent } from './core/components/add-employee/add-employe
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'employee';
+  employees = [
+    {
+      id: 1,
+      lastname: 'Smith',
+      firstname: 'Tim',
+    },
+    {
+      id: 2,
+      lastname: 'Wozoski',
+      firstname: 'Mike'
+    }
+  ]
 }
