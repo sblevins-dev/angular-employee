@@ -10,15 +10,15 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let manager of managers">
+            <tr *ngFor="let employee of employees">
                 <td>
-                    {{ manager.id }}
+                    {{ employee.internal_Id }}
                 </td>
                 <td >
-                    {{ manager.lastName }}
+                    {{ employee.lastname }}
                 </td>
                 <td>
-                    {{ manager.firstName }}
+                    {{ employee.firstname }}
                 </td>
             </tr>
         </tbody>

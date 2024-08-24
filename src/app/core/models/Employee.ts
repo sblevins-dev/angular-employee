@@ -1,5 +1,7 @@
 export default interface Employee {
+firstName: any;
     id: number,
-    firstName: string,
-    lastName: string
+    internal_Id: number,
+    firstname: string,
+    lastname: string
 }

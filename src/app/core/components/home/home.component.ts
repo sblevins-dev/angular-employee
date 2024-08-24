@@ -14,9 +14,15 @@ import Employee from '../../models/Employee';
 })
 export class HomeComponent implements OnInit {
   employeeService: EmployeeService = inject(EmployeeService);
-  managers: Employee[] = [];
+  employees: Employee[] = [];
 
   ngOnInit() {
-    this.managers = this.employeeService.managers$;
+    this.loadEmployeesByAdmin(3);
+  }
+
+  loadEmployeesByAdmin(adminId: number): void {
+    this.employeeService.getEmployeesByAdmin(adminId).subscribe(data => {
+      this.employees = data;
+    })
   }
 }

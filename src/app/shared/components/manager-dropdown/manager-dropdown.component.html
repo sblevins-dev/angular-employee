@@ -3,7 +3,7 @@
     <select name="manager" id="manager" class="border border-black">
         <option value="" disabled selected hidden>Select a Manager</option>
         <option [value]="manager" *ngFor="let manager of managers" class="px-2">
-            {{ manager.firstName + " " + manager.lastName }}
+            {{ manager.firstname + " " + manager.lastname }}
         </option>
     </select>
 </span>
