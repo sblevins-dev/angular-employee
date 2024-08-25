@@ -12,32 +12,13 @@ import Employee from '../../models/Employee';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
-  // employeeService: EmployeeService = inject(EmployeeService);
-  // employees: Employee[] = [];
-  // @Input() managerId!: number;
+export class HomeComponent implements OnInit {
+  employeeService: EmployeeService = inject(EmployeeService);
+  managedEmployees: Employee[] = [];
 
-  // selectedManagerId: number | null = null;
-
-  // onManagerSelected(managerId: number): void {
-  //   this.selectedManagerId = managerId;
-  // }
-
-  // // ngOnInit() {
-  // //   this.loadManagedEmployees(3);
-  // // }
-
-  // ngOnChanges(changes: SimpleChanges): void {
-  //   if(changes['managerId'] && this.managerId) {
-  //     this.loadManagedEmployees();
-  //     console.log(this.managerId)
-  //   }
-  // }
-
-  // loadManagedEmployees(): void {
-  //   this.employeeService.getEmployeesByAdmin(this.managerId).subscribe(data => {
-  //     this.employees = data;
-  //     console.log(this.employees)
-  //   })
-  // }
+  ngOnInit(): void {
+      this.employeeService.managedEmployees$.subscribe(employees => {
+        this.managedEmployees = employees;
+      })
+  }
 }
