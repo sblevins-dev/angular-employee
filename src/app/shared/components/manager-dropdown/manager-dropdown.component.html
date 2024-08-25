@@ -1,8 +1,8 @@
 <span>
     <label for="manager" class="font-semibold">Manager: </label>
-    <select name="manager" id="manager" class="border border-black">
+    <select [(ngModel)]="selectedManager" (ngModelChange)="onSelectManager($event)" name="manager" id="manager" class="border border-black">
         <option value="" disabled selected hidden>Select a Manager</option>
-        <option [value]="manager" *ngFor="let manager of managers" class="px-2">
+        <option *ngFor="let manager of managers$ | async" [ngValue]="manager" class="px-2">
             {{ manager.firstname + " " + manager.lastname }}
         </option>
     </select>

@@ -1,4 +1,4 @@
-import { Component, inject, Input, OnInit } from '@angular/core';
+import { Component, inject, Input, OnChanges, OnInit, SimpleChange, SimpleChanges } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { ManagerDropdownComponent } from "../../../shared/components/manager-dropdown/manager-dropdown.component";
@@ -12,17 +12,32 @@ import Employee from '../../models/Employee';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit {
-  employeeService: EmployeeService = inject(EmployeeService);
-  employees: Employee[] = [];
+export class HomeComponent {
+  // employeeService: EmployeeService = inject(EmployeeService);
+  // employees: Employee[] = [];
+  // @Input() managerId!: number;
 
-  ngOnInit() {
-    this.loadEmployeesByAdmin(3);
-  }
+  // selectedManagerId: number | null = null;
 
-  loadEmployeesByAdmin(adminId: number): void {
-    this.employeeService.getEmployeesByAdmin(adminId).subscribe(data => {
-      this.employees = data;
-    })
-  }
+  // onManagerSelected(managerId: number): void {
+  //   this.selectedManagerId = managerId;
+  // }
+
+  // // ngOnInit() {
+  // //   this.loadManagedEmployees(3);
+  // // }
+
+  // ngOnChanges(changes: SimpleChanges): void {
+  //   if(changes['managerId'] && this.managerId) {
+  //     this.loadManagedEmployees();
+  //     console.log(this.managerId)
+  //   }
+  // }
+
+  // loadManagedEmployees(): void {
+  //   this.employeeService.getEmployeesByAdmin(this.managerId).subscribe(data => {
+  //     this.employees = data;
+  //     console.log(this.employees)
+  //   })
+  // }
 }

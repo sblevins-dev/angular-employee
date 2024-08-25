@@ -12,6 +12,12 @@ import { AddEmployeeComponent } from './core/components/add-employee/add-employe
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  selectedManagerId: number | null = null;
+
+  onManagerSelected(managerId: number): void {
+    this.selectedManagerId = managerId;
+  }
+
   employees = [
     {
       id: 1,
