@@ -1,7 +1,7 @@
 <div class="flex flex-col items-center justify-center gap-y-4">
     <app-manager-dropdown></app-manager-dropdown>
 
-    <form [formGroup]="employeeForm" class="flex flex-col gap-4">
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-4">
         <label>
             Employee ID:
             <input type="text" formControlName="internalId" />
@@ -9,12 +9,12 @@
 
         <label>
             First Name:
-            <input type="text" formControlName="firstName" />
+            <input type="text" formControlName="firstname" />
         </label>
 
         <label>
             Last Name:
-            <input type="text" formControlName="lastName" />
+            <input type="text" formControlName="lastname" />
         </label>
 
         <label>
@@ -23,7 +23,7 @@
         </label>
 
         <div class="flex justify-center gap-10">
-            <button type="button">Save</button>
+            <button type="submit" [disabled]="employeeForm.invalid">Save</button>
             <button type="button" routerLink="/home">Cancel</button>
         </div>
     </form>
